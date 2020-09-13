@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 using namespace std;
 char arr[10][10] = {"000X", "0X0X", "0000", "0X00"};
 bool getAns(char a[10][10], int out[10][10], int i, int j, int m, int n, int count)
