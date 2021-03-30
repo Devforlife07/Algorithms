@@ -20,9 +20,23 @@ int dpSolution(int *rod, int length)
     int dp[100] = {0};
     for (int i = 1; i <= length; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = 0; j < i; j++)
         {
-            dp[i] = max(dp[i], rod[j - 1] + dp[i - j]);
+            dp[i] = max(dp[i], rod[j] + dp[i - j - 1]);
+        }
+    }
+    return dp[length];
+}
+int optimizedDpSolution(int *rod, int length)
+{
+    int dp[100] = {0};
+    dp[0] = 0;
+    for (int i = 1; i <= length; i++)
+    {
+        dp[i] = rod[i - 1];
+        for (int j = 0; j < i; j++)
+        {
+            dp[i] = max(dp[i], rod[j] + dp[i - j - 1]);
         }
     }
     return dp[length];
@@ -35,5 +49,7 @@ int main()
     int ans = recursiveSolution(rod, n, length);
     cout << ans << '\n';
     int ans2 = dpSolution(rod, length);
+    int ans3 = optimizedDpSolution(rod, length);
     cout << ans2 << endl;
+    cout << ans3 << endl;
 }
