@@ -1,0 +1,10 @@
+Parent 0 1
+Parent 1 2
+Parent 2 -1
+Parent 3 4
+Parent 4 -1
+Rank 0 2
+Rank 1 2
+Rank 2 1
+Rank 3 2
+Rank 4 1
